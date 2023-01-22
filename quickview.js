@@ -12,10 +12,11 @@ document.body.insertAdjacentHTML('afterbegin', quickViewHTML);
 let categoryItems = document.querySelectorAll(".ers-item");
 
 for (let i=0; i < categoryItems.length; i++) {
+    let quickViewBtnContainer = document.createElement("div");
     let quickViewBtn = `<btn style="width:100%" class="quickview-btn ers-item-button button-style">Quick View</btn>`;
     let btnContainer = categoryItems[i].querySelector(".button-price-container");
     console.log(btnContainer);
-    btnContainer.parentNode.insertBefore(quickViewBtn, btnContainer);
+    btnContainer.parentNode.insertBefore(quickViewBtnContainer, btnContainer);
 }
 
 let quickviewOverlay = document.getElementById("quickview-overlay");
