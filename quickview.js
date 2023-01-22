@@ -6,14 +6,13 @@ let quickViewHTML = `<div id="quickview-overlay" class="screen-overlay">
                         </div>
                     </div>`;
 
-let quickViewBtn = `<btn style="width:100%" class="quickview-btn ers-item-button button-style">Quick View</btn>`;
-
 let categoryItems = document.querySelectorAll(".ers-item");
 
 for (const item of categoryItems) {
+    let quickViewBtn = `<btn style="width:100%" class="quickview-btn ers-item-button button-style">Quick View</btn>`;
     let btnContainer = item.querySelector(".button-price-container");
     console.log(btnContainer);
-   // btnContainer.parentNode.insertBefore(quickViewBtn, btnContainer);
+    btnContainer.parentNode.insertBefore(quickViewBtn, btnContainer);
 }
 
 document.body.insertAdjacentHTML('afterbegin', quickViewHTML);
