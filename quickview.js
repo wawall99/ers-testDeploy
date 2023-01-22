@@ -12,8 +12,9 @@ document.body.insertAdjacentHTML('afterbegin', quickViewHTML);
 let categoryItems = document.querySelectorAll(".ers-item");
 
 for (const item of categoryItems) {
-    console.log(item);
-    let quickViewBtn = `<btn style="width:100%" class="quickview-btn ers-item-button button-style">Quick View</btn>`;
+    let prefix = 'container_' + folderName +'_id_';
+    let itemId = item.id.replace(prefix,'')
+    let quickViewBtn = `<div class="quickview-btn-container"><btn style="width:100%" data-id=${itemId} class="quickview-btn ers-item-button button-style">Quick View</btn></div>`;
     let btnContainer = item.querySelector(".button-price-container");
     btnContainer.insertAdjacentHTML("beforebegin", quickViewBtn);
 }
