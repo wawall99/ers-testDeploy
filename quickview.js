@@ -9,7 +9,7 @@ let quickViewHTML =
 </div>
 `;
 
-let bodyTest = querySelector("body");
+let bodyTest = document.querySelector("body");
 bodyTest.innerHTML += quickViewHTML;
 
 let quickviewOverlay = document.getElementById("quickview-overlay");
