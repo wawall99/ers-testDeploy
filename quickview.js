@@ -9,8 +9,7 @@ let quickViewHTML =
 </div>
 `;
 
-let bodyTest = document.querySelector("body");
-bodyTest.innerHTML += quickViewHTML;
+document.body.appendChild(quickviewHTML);
 
 let quickviewOverlay = document.getElementById("quickview-overlay");
 let quickviewInner = document.getElementById("quickview-inner");
