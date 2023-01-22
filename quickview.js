@@ -1,4 +1,4 @@
-let quickViewHTML = `<div id="quickview-overlay1" class="screen-overlay">
+let quickViewHTML = `<div id="quickview-overlay" class="screen-overlay">
                         <div class="quickview-wrapper">
                             <btn onclick="clearQuickView(); event.preventDefault()" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></btn>
                             <div class="loader-container"><span class="loader"></span></div>
