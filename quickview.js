@@ -1,3 +1,17 @@
+let quickViewHTML = 
+`
+<div id="quickview-overlay" class="screen-overlay">
+    <div class="quickview-wrapper">
+        <btn onclick="clearQuickView(); event.preventDefault()" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></btn>
+        <div class="loader-container"><span class="loader"></span></div>
+        <div id="quickview-inner"></div>
+    </div>
+</div>
+`;
+
+let bodyTest = querySelector("body");
+bodyTest.innerHTML += quickViewHTML;
+
 let quickviewOverlay = document.getElementById("quickview-overlay");
 let quickviewInner = document.getElementById("quickview-inner");
 let quickviewSpinner = quickviewOverlay.querySelector(".loader-container");
