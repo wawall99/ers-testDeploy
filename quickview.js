@@ -9,7 +9,7 @@ let quickViewHTML =
 </div>
 `;
 
-document.body.appendChild(quickviewHTML);
+document.body.insertAdjacentHTML('beforeend', quickViewHTML);
 
 let quickviewOverlay = document.getElementById("quickview-overlay");
 let quickviewInner = document.getElementById("quickview-inner");
