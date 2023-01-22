@@ -6,7 +6,7 @@ let quickViewHTML = `<div id="quickview-overlay" class="screen-overlay">
                         </div>
                     </div>`;
 
-document.body.insertAdjacentHTML('beforeend', quickViewHTML);
+document.body.insertAdjacentHTML('afterbegin', quickViewHTML);
 
 let quickviewOverlay = document.getElementById("quickview-overlay");
 let quickviewInner = document.getElementById("quickview-inner");
