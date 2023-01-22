@@ -1,21 +1,22 @@
-let quickViewHTML = `<div id="quickview-overlay" class="screen-overlay">
-                        <div class="quickview-wrapper">
-                            <btn onclick="clearQuickView(); event.preventDefault()" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></btn>
-                            <div class="loader-container"><span class="loader"></span></div>
-                            <div id="quickview-inner"></div>
-                        </div>
-                    </div>`;
+let quickViewHTML = `
+<div id="quickview-overlay" class="screen-overlay">
+    <div class="quickview-wrapper">
+        <btn onclick="clearQuickView(); event.preventDefault()" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></btn>
+        <div class="loader-container"><span class="loader"></span></div>
+        <div id="quickview-inner"></div>
+    </div>
+</div>`;
+
+document.body.insertAdjacentHTML('afterbegin', quickViewHTML);
 
 let categoryItems = document.querySelectorAll(".ers-item");
 
-for (const item of categoryItems) {
+for (let item of categoryItems) {
     let quickViewBtn = `<btn style="width:100%" class="quickview-btn ers-item-button button-style">Quick View</btn>`;
     let btnContainer = item.querySelector(".button-price-container");
     console.log(btnContainer);
     btnContainer.parentNode.insertBefore(quickViewBtn, btnContainer);
 }
-
-document.body.insertAdjacentHTML('afterbegin', quickViewHTML);
 
 let quickviewOverlay = document.getElementById("quickview-overlay");
 let quickviewInner = document.getElementById("quickview-inner");
