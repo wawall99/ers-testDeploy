@@ -6,6 +6,14 @@ let quickViewHTML = `<div id="quickview-overlay" class="screen-overlay">
                         </div>
                     </div>`;
 
+let quickViewBtn = `<btn style="width:100%" class="quickview-btn ers-item-button button-style">Quick View</btn>`;
+
+let categoryItems = document.querySelectorAll(".ers-item");
+
+for (const element of categoryItems) {
+    console.log(element);
+}
+
 document.body.insertAdjacentHTML('afterbegin', quickViewHTML);
 
 let quickviewOverlay = document.getElementById("quickview-overlay");
