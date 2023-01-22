@@ -12,7 +12,8 @@ let categoryItems = document.querySelectorAll(".ers-item");
 
 for (const item of categoryItems) {
     let btnContainer = item.querySelector(".button-price-container");
-    btnContainer.parentNode.insertBefore(quickViewBtn, btnContainer);
+    console.log(btnContainer);
+   // btnContainer.parentNode.insertBefore(quickViewBtn, btnContainer);
 }
 
 document.body.insertAdjacentHTML('afterbegin', quickViewHTML);
