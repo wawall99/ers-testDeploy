@@ -26,7 +26,6 @@ let quickviewSpinner = quickviewOverlay.querySelector(".loader-container");
 
 function quickViewLink(itemId) {
   for (const product of productsData) {
-    console.log(product);
     if (product.id == itemId) {
       initQuickView(product.url);
     }
