@@ -127,7 +127,7 @@ function lookUpServiceArea() {
     
     let mapText;
     let showSetAddress = true;
-    setAddressBtn.innerText = 'Set as Event Address';
+    checkDelivery.setAddressBtn.innerText = 'Set as Event Address';
     checkDelivery.deliveryText.innerHTML = '';
     
     if(stateMatch && cityMatch && zipMatch) {
