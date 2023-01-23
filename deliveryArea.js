@@ -21,7 +21,7 @@ let checkDeliveryHTML = `
     <div id="delivery-overlay" class="screen-overlay">
     <div class="delivery-modal-wrapper">
         <div class="close-btn-wrapper">
-            <a href="#" onclick="event.preventDefault(); clearDeliveryModel(); deliveryOverlay.classList.remove('active');" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+            <button onclick="clearDeliveryModel();" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></button>
         </div>
         <div id="delivery-modal">
             <div id="check-delivery" style="width:100%; margin: auto;">
@@ -231,18 +231,18 @@ function saveAddress() {
 }
 
 function clearDeliveryModel() {
-    checkDelivery.deliveryText.innerHTML = ``;
-    checkDelivery.mapContainer.innerHTML = ``;
+    checkDelivery.deliveryOverlay.classList.remove('active');
     checkDelivery.mapContainer.classList.remove('active');
     checkDelivery.setAddressBtn.classList.remove('active');
     checkDelivery.deliveryResponse.classList.remove('active');
+    checkDelivery.deliveryText.innerHTML = ``;
+    checkDelivery.mapContainer.innerHTML = ``;
     checkDelivery.inputField.value = "";
 }
 
 checkDelivery.deliveryOverlay.addEventListener('click', function(event) {
   const isOutside = !event.target.closest('.delivery-modal-wrapper');
   if (isOutside) {
-    checkDelivery.deliveryOverlay.classList.remove('active');
     clearDeliveryModel();
   }
 })
