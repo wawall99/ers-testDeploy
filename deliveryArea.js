@@ -17,6 +17,16 @@ fetchServiceAreas()
         zipAreas = serviceAreas.zips.rows;
     });
 
+<<<<<<< HEAD
+let checkDelivery = {
+    checkDelivery.inputField: document.getElementById('check-delivery-input');
+    checkDelivery.deliveryOverlay: document.getElementById('delivery-overlay');
+    checkDelivery.deliveryResponse: document.getElementById('delivery-response');
+    checkDelivery.deliveryText: document.getElementById('delivery-text');
+    checkDelivery.mapContainer: document.getElementById('map-container');
+    checkDelivery.setAddressBtn: document.getElementById('set-address-btn');
+}
+=======
 let checkDelivery = {
     inputField = document.getElementById('check-delivery-input');
     deliveryOverlay = document.getElementById('delivery-overlay');
@@ -25,6 +35,7 @@ let checkDelivery = {
     mapContainer = document.getElementById('map-container');
     setAddressBtn = document.getElementById('set-address-btn');
 }
+>>>>>>> a88133d1d7e4b5f420fec9cc3dc269c28645e873
 checkDelivery.autocompleteOptions = {
     fields: ["address_components"],
     componentRestrictions: { country: 'us' },
