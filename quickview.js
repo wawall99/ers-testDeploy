@@ -12,6 +12,7 @@ document.body.insertAdjacentHTML('afterbegin', quickViewHTML);
 let categoryItems = document.querySelectorAll(".ers-item");
 
 for (const item of categoryItems) {
+    item.removeAttribute('onclick');
     let itemId = item.id.split("id_")[1];
     let quickViewBtn = `<div class="quickview-btn-container"><btn style="width:100%" onclick="quickViewLink(${itemId})" class="quickview-btn ers-item-button button-style">Quick View</btn></div>`;
     let btnContainer = item.querySelector(".button-price-container");
