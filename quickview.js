@@ -7,7 +7,7 @@ let quickViewHTML = `
     </div>
 </div>`;
 
-document.body.insertAdjacentHTML('afterbegin', quickViewHTML);
+document.body.insertAdjacentHTML('beforeend', quickViewHTML);
 
 let categoryItems = document.querySelectorAll(".ers-item");
 
