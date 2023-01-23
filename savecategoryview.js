@@ -4,7 +4,7 @@ function saveCategoryView() {
     category.path = window.location.pathname;
     category.views = 1;
 
-    for (const apiCategory of categoriesData) {
+    for (const apiCategory of Object.keys(categoriesData)) {
         if(category.path == apiCategory.url) {
             category.picture = apiCategory.picture;
             category.name = apiCategory.name;
