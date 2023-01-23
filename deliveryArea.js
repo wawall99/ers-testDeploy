@@ -17,7 +17,7 @@ fetchServiceAreas()
         zipAreas = serviceAreas.zips.rows;
     });
 
-let checkDelivery;
+let checkDelivery = checkDelivery || {};
 checkDelivery.inputField = document.getElementById('check-delivery-input');
 checkDelivery.deliveryOverlay = document.getElementById('delivery-overlay');
 checkDelivery.deliveryResponse = document.getElementById('delivery-response');
