@@ -17,10 +17,14 @@ for (const item of categoryItems) {
     let quickViewBtn = `<div class="quickview-btn-container"><btn style="width:100%" data-item-id=${itemId} class="quickview-btn ers-item-button button-style">Quick View</btn></div>`;
     let btnContainer = item.querySelector(".button-price-container");
     btnContainer.insertAdjacentHTML("beforebegin", quickViewBtn);
+}
 
-    quickViewBtn.addEventListener('click', () => {
-      console.log('test');
-    });
+const quickViewBtns = document.querySelectorAll(".quickview-btn");
+
+for (const btn of quickViewBtns) {
+  btn.addEventListener('click', () => {
+    console.log('test');
+  });
 }
 
 let quickviewOverlay = document.getElementById("quickview-overlay");
