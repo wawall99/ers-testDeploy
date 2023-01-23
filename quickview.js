@@ -13,6 +13,7 @@ let categoryItems = document.querySelectorAll(".ers-item");
 
 for (const item of categoryItems) {
     let prefix = 'container_' + folderName +'_id_';
+    console.log(item.id.split("id_"))
     let itemId = item.id.replace(prefix,'')
     let quickViewBtn = `<div class="quickview-btn-container"><btn style="width:100%" onclick="quickViewLink(${itemId})" class="quickview-btn ers-item-button button-style">Quick View</btn></div>`;
     let btnContainer = item.querySelector(".button-price-container");
@@ -23,7 +24,6 @@ let quickviewOverlay = document.getElementById("quickview-overlay");
 let quickviewInner = document.getElementById("quickview-inner");
 let quickviewSpinner = quickviewOverlay.querySelector(".loader-container");
 
-
 function quickViewLink(itemId) {
   for (const product of productsData) {
     if (product.id == itemId) {
@@ -31,7 +31,6 @@ function quickViewLink(itemId) {
     }
   }
 }
-
 
 function initQuickView(itemUrl) {
     quickviewOverlay.classList.add('active');
