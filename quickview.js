@@ -14,17 +14,9 @@ let categoryItems = document.querySelectorAll(".ers-item");
 for (const item of categoryItems) {
     let prefix = 'container_' + folderName +'_id_';
     let itemId = item.id.replace(prefix,'')
-    let quickViewBtn = `<div class="quickview-btn-container"><btn style="width:100%" data-item-id=${itemId} class="quickview-btn ers-item-button button-style">Quick View</btn></div>`;
+    let quickViewBtn = `<div class="quickview-btn-container"><btn style="width:100%" onclick="initQuickView(${itemId})" class="quickview-btn ers-item-button button-style">Quick View</btn></div>`;
     let btnContainer = item.querySelector(".button-price-container");
     btnContainer.insertAdjacentHTML("beforebegin", quickViewBtn);
-}
-
-const quickViewBtns = document.querySelectorAll(".quickview-btn");
-
-for (const btn of quickViewBtns) {
-  btn.addEventListener('click', () => {
-    console.log('test');
-  });
 }
 
 let quickviewOverlay = document.getElementById("quickview-overlay");
