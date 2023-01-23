@@ -27,7 +27,7 @@ function quickViewLink(itemId) {
   for (const product of productsData) {
     if (product.id == itemId) {
       initQuickView(product.url);
-    }
+    } 
   }
 }
 
@@ -39,9 +39,8 @@ function initQuickView(itemUrl) {
         .then(data => {
             const parser = new DOMParser();
             const parsedDocument = parser.parseFromString(data, "text/html");
-            let itemPageFiltered = parsedDocument.getElementById("main_section_editor_container");
-            let itemPageTest = parsedDocument.querySelector(".store .col-xs-12");
-            displayQuickView(itemPageTest);
+            let itemPageHTML = parsedDocument.querySelector(".store .col-xs-12");
+            displayQuickView(itemPageHTML);
         })
 }
 
