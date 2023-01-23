@@ -43,25 +43,25 @@ let checkDeliveryHTML = `
 document.body.insertAdjacentHTML('beforeend', checkDeliveryHTML)
 
 let checkDelivery = {
-    inputField: document.getElementById('check-delivery-input'),
     deliveryOverlay: document.getElementById('delivery-overlay'),
     deliveryResponse: document.getElementById('delivery-response'),
     deliveryText: document.getElementById('delivery-text'),
     mapContainer: document.getElementById('map-container'),
-    setAddressBtn: document.getElementById('set-address-btn')
+    setAddressBtn: document.getElementById('set-address-btn'),
+    inputField: document.getElementById('check-delivery-input'),
+    autocompleteOptions: {
+        fields: ["address_components"],
+        componentRestrictions: { country: 'us' },
+        types: ['geocode']
+    }
 }
-autocompleteOptions = {
-    fields: ["address_components"],
-    componentRestrictions: { country: 'us' },
-    types: ['geocode']
-};
 
 function showDeliveryModal() {
     checkDelivery.deliveryOverlay.classList.add('active');
 }
 // Initialize AutoComplete on Address Field
 function initDeliveryAreaMap() {
-    checkDelivery.autocomplete = new google.maps.places.Autocomplete(checkDelivery.inputField, autocompleteOptions);
+    checkDelivery.autocomplete = new google.maps.places.Autocomplete(checkDelivery.inputField, checkDelivery.autocompleteOptions);
     checkDelivery.autocomplete.addListener('place_changed', function() {
         lookUpServiceArea();
     });
