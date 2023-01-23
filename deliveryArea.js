@@ -18,12 +18,12 @@ fetchServiceAreas()
     });
 
 let checkDelivery = {
-    inputField: document.getElementById('check-delivery-input');
-    deliveryOverlay: document.getElementById('delivery-overlay');
-    deliveryResponse: document.getElementById('delivery-response');
-    deliveryText: document.getElementById('delivery-text');
-    mapContainer: document.getElementById('map-container');
-    setAddressBtn: document.getElementById('set-address-btn');
+    inputField: document.getElementById('check-delivery-input'),
+    deliveryOverlay: document.getElementById('delivery-overlay'),
+    deliveryResponse: document.getElementById('delivery-response'),
+    deliveryText: document.getElementById('delivery-text'),
+    mapContainer: document.getElementById('map-container'),
+    setAddressBtn: document.getElementById('set-address-btn')
 }
 autocompleteOptions = {
     fields: ["address_components"],
