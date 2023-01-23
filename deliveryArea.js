@@ -1,5 +1,23 @@
-let checkDelivery;
+let stateAreas;
+let cityAreas;
+let zipAreas;
+// let serviceAreas;
 
+let serviceAreaURL = 'https://inflateaparty.ourers.com/publicapi/read/states,cities,zips/';
+async function fetchServiceAreas() {
+    const response = await fetch(serviceAreaURL);
+    const serviceAreas = await response.json();
+    return serviceAreas;
+}
+
+fetchServiceAreas()
+    .then(serviceAreas => {
+        cityAreas = serviceAreas.cities.rows;
+        stateAreas = serviceAreas.states.rows;
+        zipAreas = serviceAreas.zips.rows;
+    });
+
+let checkDelivery;
 checkDelivery.inputField = document.getElementById('check-delivery-input');
 checkDelivery.deliveryOverlay = document.getElementById('delivery-overlay');
 checkDelivery.deliveryResponse = document.getElementById('delivery-response');
