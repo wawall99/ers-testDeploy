@@ -169,7 +169,7 @@ function lookUpServiceArea() {
         })
         
     function initMap() {
-        let map = new google.maps.Map(mapContainer, {
+        let map = new google.maps.Map(checkDelivery.mapContainer, {
         center: addressLatLng,
         zoom: 14,
         });
