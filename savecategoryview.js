@@ -3,10 +3,11 @@ function saveCategoryView() {
     let category = {};
     category.path = window.location.pathname;
     category.views = 1;
-    for (let c=0; c < categoriesData.length; c++) {
-        if(category.path == categoriesData[c].url) {
-            category.picture = categoriesData[c].picture;
-            category.name = categoriesData[c].name;
+
+    for (const apiCategory of categoriesData) {
+        if(category.path == apiCategory.url) {
+            category.picture = apiCategory.picture;
+            category.name = apiCategory.name;
         }
     }
     
