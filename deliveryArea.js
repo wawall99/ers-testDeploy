@@ -17,6 +17,31 @@ fetchServiceAreas()
         zipAreas = serviceAreas.zips.rows;
     });
 
+let checkDeliveryHTML = `
+    <div id="delivery-overlay" class="screen-overlay">
+    <div class="delivery-modal-wrapper">
+        <div class="close-btn-wrapper">
+            <a href="#" onclick="event.preventDefault(); clearDeliveryModel(); deliveryOverlay.classList.remove('active');" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></a>
+        </div>
+        <div id="delivery-modal">
+            <div id="check-delivery" style="width:100%; margin: auto;">
+                <label for="check-delivery-input">Check Delivery Area</label>
+                <input style="width:100%" id="check-delivery-input" type="text">
+            </div>
+            <div id="delivery-response">
+                <div id="delivery-text-wrapper">
+                    <div id="delivery-text"></div>
+                </div>
+                <div id="map-container"></div>
+                <btn onclick="saveAddress()" id="set-address-btn" class="btn button">Set As Event Address</btn>
+            </div>
+        </div>
+    </div>
+    </div>
+`;
+
+document.body.insertAdjacentHTML('beforeend', checkDeliveryHTML)
+
 let checkDelivery = {
     inputField: document.getElementById('check-delivery-input'),
     deliveryOverlay: document.getElementById('delivery-overlay'),
