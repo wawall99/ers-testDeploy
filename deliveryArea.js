@@ -49,6 +49,7 @@ let checkDelivery = {
     mapContainer: document.getElementById('map-container'),
     setAddressBtn: document.getElementById('set-address-btn'),
     inputField: document.getElementById('check-delivery-input'),
+    autocomplete:,
     autocompleteOptions: {
         fields: ["address_components"],
         componentRestrictions: { country: 'us' },
