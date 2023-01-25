@@ -8,6 +8,7 @@ function saveCategoryView() {
         if(category.path == apiCategory.url) {
             category.picture = apiCategory.picture;
             category.name = apiCategory.name;
+            category.id = apiCategory.id;
         }
     }
     
