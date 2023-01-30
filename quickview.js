@@ -42,6 +42,7 @@ function initQuickView(itemUrl) {
             let itemPageHTML = parsedDocument.querySelector(".store .col-xs-12");
             displayQuickView(itemPageHTML);
         })
+        .catch(console.log('Quickview Error'));
 }
 
 function displayQuickView(itemPageData1) {

@@ -1,0 +1,460 @@
+<!--
+    Section: Category Carousel All Categories
+    Option_Count: 1
+-->
+<style rel="stylesheet" type="text/css">
+    .ers-category-carousel {
+        min-height: 700px;
+    }
+    body[class^="ers"] .ers-category-carousel .title-for-editor {
+        display: none;
+    }
+    .ers-category-carousel .swiper-button-next {
+        right: 0;
+        border-radius: 5px 0 0 5px;
+    }
+    .ers-category-carousel .swiper-button-prev {
+        left: 0;
+        border-radius: 0 5px 5px 0;
+    }
+    .ers-category-carousel .swiper-button-next,
+    .ers-category-carousel .swiper-button-prev {
+        top: 40%;
+    }
+    .ers-category-carousel .swiper-button-prev:after,
+    .ers-category-carousel .swiper-button-next:after {
+        font-size: 24px;
+    }
+    .ers-category-carousel .swiper-button-next:after {
+        padding-left: 5px;
+    }
+    .ers-category-carousel .swiper-button-prev:after {
+        padding-right: 5px;
+    }
+    .ers-category-carousel .swiper-button-next,
+    .ers-category-carousel .swiper-button-prev {
+        height: 100px;
+        width: 30px;
+        background-color: [setting:color_theme_3];
+    }
+    .ers-category-carousel .swiper-button-next,
+    .ers-category-carousel .swiper-button-prev {
+        color: [setting:color_theme_6];
+    }
+    .ers-category-carousel .swiper-button-next.swiper-button-disabled,
+    .ers-category-carousel .swiper-button-prev.swiper-button-disabled {
+        pointer-events: initial;
+    }
+    .ers-category-carousel .category-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .ers-category-carousel .category {
+        width: 100%;
+        margin: 10px 0;
+        border-radius: 5px;
+        border: solid 2px #eee;
+    }
+    .ers-category-carousel .category-header-wrapper {
+        width: 100%;
+        padding: 15px 25px;
+        border-radius: 5px 5px 0 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        background-color: grey;
+        background-color: [setting:color_theme_1];
+    }
+    .ers-category-carousel .category-header {
+        font-size: 18px;
+        margin: 0;
+        text-align: left;
+        color: [setting:color_theme_4];
+    }
+    .ers-category-carousel .see-all-link {
+        color: #222;
+        background-color: #fff;
+        margin-left: 20px;
+        white-space: nowrap;
+    }
+    
+    .ers-category-carousel .item-inner-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #222;
+        border-radius: 5px;
+        background-color: #fff;
+    }
+    .ers-category-carousel .item-inner-container:hover {
+        color: #222;
+        text-decoration: none;;
+    }
+    .ers-category-carousel .item-image-wrapper {
+        padding: 10px;
+        width: 150px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ers-category-carousel .item-image {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    .ers-category-carousel .item-name {
+        overflow: hidden;
+        height: 50px;
+        padding: 0 20px;
+        max-width: 225px;
+        text-align: center;
+    }
+    .ers-category-carousel .item-price {
+        font-weight: bold;
+        padding-bottom: 10px;
+    }
+    .ers-category-carousel .item-name,
+    .ers-category-carousel .item-price {
+        font-size: 12px;
+    }
+    .ers-category-carousel .swiper > .swiper-wrapper > div.category-button-slide {
+        height: unset;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .ers-category-carousel .category-button {
+        background-color: grey;
+        background-color: [setting:color_theme_2];
+    }
+    .ers-category-carousel .swiper-wrapper > div {
+        display: none;
+    }
+    .ers-category-carousel .swiper-wrapper > div:nth-child(-n+5) {
+        display: initial;
+    }
+    .ers-category-carousel .swiper-wrapper > div:last-child {
+        display: initial;
+    }
+    .ers-category-carousel .editor-only {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .ers-category-carousel .editor-only .category-wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .ers-category-carousel .editor-only .editor-swiper-wrapper {
+        display: flex;
+        justify-content: space-around;
+    }
+    @media only screen and (min-width: 768px) {
+        .ers-category-carousel .category-header {
+            font-size: 28px;
+        }
+        .ers-category-carousel .item-name,
+        .ers-category-carousel .item-price {
+            font-size: 16px;
+        }
+        .ers-category-carousel .item-image-wrapper {
+            height: 150px;
+        }
+    }
+    @media only screen and (min-width: 992px) {
+        .ers-category-carousel .category {
+            width: calc(50% - 40px);
+            margin: 20px;
+        }
+    }
+</style>
+<div class="ers-category-carousel">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="category-wrapper">
+                    <div class="editor-only">
+                        <div class="category">
+                            <div class="category-header-wrapper">
+                                <div class="category-header header-style">Category Name</div>
+                                <div class="see-all-link button-style">See All</div>
+                            </div>
+                            <div class="editor-swiper-wrapper">
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <div class="category-header-wrapper">
+                                <div class="category-header header-style">Category Name</div>
+                                <div class="see-all-link button-style">See All</div>
+                            </div>
+                            <div class="editor-swiper-wrapper">
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <div class="category-header-wrapper">
+                                <div class="category-header header-style">Category Name</div>
+                                <div class="see-all-link button-style">See All</div>
+                            </div>
+                            <div class="editor-swiper-wrapper">
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category">
+                            <div class="category-header-wrapper">
+                                <div class="category-header header-style">Category Name</div>
+                                <div class="see-all-link button-style">See All</div>
+                            </div>
+                            <div class="editor-swiper-wrapper">
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                                <div class="item-inner-container link-style">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="https://files.sysers.com/cp/upload/bouncetemplate-websections/editor/full/placeholder-image.jpg" alt="Picture of placeholder">
+                                    </div>
+                                    <div class="item-name">Product Name</div>
+                                    <div class="item-price">$0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+const initializeSwipers = () => {
+    let retryCounter = 0;
+
+    if (productsData && categoriesData) {
+        let categoriesCounter = 0;
+        
+        let categoryWrapper = document.body.querySelector('.category-wrapper');
+
+        categoriesData.forEach(category => {
+            let productsForCategory = 0;
+
+            if (
+                category.display === true &&
+                categoriesCounter < 6
+            ) {
+            /*
+                $('.category-wrapper').append(`
+                    <div class="category category-${category.id}">
+                        <div class="category-header-wrapper">
+                            <h3 class="category-header header-style">${category.name}</h3>
+                            <a class="see-all-link button-style" href="${category.url}">See All</a>
+                        </div>
+                        <div class="swiper categories-swiper-${category.id}">
+                            <div class="swiper-wrapper swiper-wrapper-${category.id}"></div>
+                            <div class="swiper-button-prev swiper-button-prev-${category.id}"></div>
+                            <div class="swiper-button-next swiper-button-next-${category.id}"></div>
+                        </div>
+                    </div>
+                `);
+
+            */
+
+                let categoryContent = `
+                    <div class="category category-${category.id}">
+                        <div class="category-header-wrapper">
+                            <h3 class="category-header header-style">${category.name}</h3>
+                            <a class="see-all-link button-style" href="${category.url}">See All</a>
+                        </div>
+                        <div class="swiper categories-swiper-${category.id}">
+                            <div class="swiper-wrapper swiper-wrapper-${category.id}"></div>
+                            <div class="swiper-button-prev swiper-button-prev-${category.id}"></div>
+                            <div class="swiper-button-next swiper-button-next-${category.id}"></div>
+                        </div>
+                    </div>
+                `;
+                categoryWrapper.insertAdjacentHTML('beforeend', categoryContent);
+
+                // categoriesCounter += 1;
+                
+                let swiperWrapper = document.body.querySelector(`.swiper-wrapper-${category.id}`);
+
+                productsData.forEach(product => {
+                    const [firstId] = product.categoryIds;
+                    if (
+                        firstId === category.id &&
+                        product.baseCost !== undefined &&
+                        parseFloat(product.baseCost) > 0 &&
+                        product.display === true
+                    ) {
+                        productsForCategory += 1;
+
+                        let itemNameWrapper = document.createElement('div');
+                        itemNameWrapper.innerHTML = product.name;
+                        let itemImgAlt = itemNameWrapper.textContent;
+                        console.log(itemImgAlt);
+
+                        let swiperContent = `
+                            <div class="swiper-slide">
+                                <a class="item-inner-container link-style" href="${product.url}">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="${product.picture}" alt="${itemImgAlt}">
+                                    </div>
+                                    <h4 class="item-name">${product.name}</h4>
+                                    <div class="item-price">$${product.baseCost}</div>
+                                </a>
+                            </div>
+                        `;
+                        swiperWrapper.insertAdjacentHTML('beforeend', swiperContent);
+                        /*
+                        $('.swiper-wrapper-' + category.id).append(`
+                            <div class="swiper-slide">
+                                <a class="item-inner-container link-style" href="${product.url}">
+                                    <div class="item-image-wrapper">
+                                        <img class="item-image" loading="lazy" src="${product.picture}" alt="${product.name}">
+                                    </div>
+                                    <h4 class="item-name">${product.name}</h4>
+                                    <div class="item-price">$${product.baseCost}</div>
+                                </a>
+                            </div>
+                        `);
+                        */
+                    }
+                });
+
+                let swiperBtn = `
+                    <div class="swiper-slide category-button-slide">
+                        <div class="item-inner-container category-button-container">
+                            <a class="category-button button-style" href="${category.url}">See More</a>
+                        </div>
+                    </div>
+                `;
+                swiperWrapper.insertAdjacentHTML('beforeend', swiperBtn);
+                /*
+                $('.swiper-wrapper-' + category.id).append(`
+                    <div class="swiper-slide category-button-slide">
+                        <div class="item-inner-container category-button-container">
+                            <a class="category-button button-style" href="${category.url}">See More</a>
+                        </div>
+                    </div>
+                `);
+                */
+                if (productsForCategory > 0) {
+                    var categoriesSwiper = new Swiper(`.categories-swiper-${category.id}`, {
+                        direction: 'horizontal',
+                        loop: false,
+                        navigation: {
+                            nextEl: `.swiper-button-next-${category.id}`,
+                            prevEl: `.swiper-button-prev-${category.id}`
+                        },
+                        speed: 400,
+                        slidesPerView: 2,
+                        breakpoints: {
+                            575: {
+                                slidesPerView: 3
+                            },
+                            700: {
+                                slidesPerView: 4
+                            },
+                            992: {
+                                slidesPerView: 2
+                            },
+                            1100: {
+                                slidesPerView: 3
+                            },
+                            1750: {
+                                slidesPerView: 4
+                            }
+                        }
+                    });
+
+                    categoriesCounter += 1;
+                } else {
+                    // $('.category-' + category.id).remove();
+                    categoryWrapper.querySelector(`.category-${category.id}`).remove();
+                }
+            }
+        });
+    } else if (retryCounter < 16) {
+        setTimeout(() => {
+            retryCounter += 1;
+            initializeSwipers();
+        }, 250);
+    }
+}
+
+initializeSwipers();
+</script>
