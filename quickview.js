@@ -1,7 +1,7 @@
 let quickViewHTML = `
 <div id="quickview-overlay" class="screen-overlay">
     <div class="quickview-wrapper">
-        <btn onclick="clearQuickView(); event.preventDefault()" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></btn>
+        <btn onclick="clearQuickView()" class="close-btn"><i class="fa fa-times" aria-hidden="true"></i></btn>
         <div class="loader-container"><span class="loader"></span></div>
         <div id="quickview-inner"></div>
     </div>
@@ -61,6 +61,7 @@ quickviewOverlay.addEventListener('click', event => {
 });
     
 function clearQuickView() {
+    event.preventDefault();
     quickviewOverlay.classList.remove('active'); 
     quickviewInner.innerHTML = "";
 }
