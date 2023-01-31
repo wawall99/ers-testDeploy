@@ -153,7 +153,7 @@ function initCheckDeliveryArea() {
         
         let mapText;
         let showSetAddress = true;
-        setAddressBtn.innerText = 'Set as Event Address';
+        // setAddressBtn.innerText = 'Set as Event Address';
         deliveryText.innerHTML = '';
         
         if(stateMatch && cityMatch && zipMatch) {
