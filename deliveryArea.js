@@ -163,7 +163,7 @@ fetchServiceAreas()
                 `;
             } else {
                 mapText = `
-                    <p>Yes, we deliver to ${city}, ${stateShort} ${postal} for $${zipFee}${zipMinimumOrderText}</p>
+                    <p>We deliver to ${city}, ${stateShort} ${postal} for $${zipFee}${zipMinimumOrderText}</p>
                 `; 
             }
         } else if (stateMatch && cityMatch) {
@@ -173,7 +173,7 @@ fetchServiceAreas()
                 `;
             } else {
                 mapText = `
-                    <p>Yes, we deliver to ${city}, ${stateShort} for $${cityFee}${cityMinimumOrderText}</p>`; 
+                    <p>We deliver to ${city}, ${stateShort} for $${cityFee}${cityMinimumOrderText}</p>`; 
             }
         } else {
             mapText = `
@@ -242,11 +242,12 @@ fetchServiceAreas()
     }
 
     let checkDeliveryBtn = document.querySelector('.check-delivery-btn');
-
-    checkDeliveryBtn.addEventListener('click', function() {
-        showDeliveryModal();
-        initDeliveryAreaMap();
-    });
+    if (checkDeliveryBtn) {
+        checkDeliveryBtn.addEventListener('click', function() {
+            showDeliveryModal();
+            initDeliveryAreaMap();
+        });
+    }
 
 
     deliveryOverlay.addEventListener('click', function(event) {
