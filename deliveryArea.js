@@ -16,7 +16,7 @@ fetchServiceAreas()
         zipAreas = serviceAreas.zips.rows;
     });
 
-function addCheckAvaliabiliyBtn {
+function addCheckAvaliabiliyBtn() {
     if (window.location.pathname.includes('/items/')) {
         let highlightContainer = document.body.querySelector('.highlight-list-content');
         if (highlightContainer) {
