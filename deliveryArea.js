@@ -17,7 +17,7 @@ fetchServiceAreas()
         zipAreas = serviceAreas.zips.rows;
     });
 
-function initCheckDeliveryArea() {
+//function initCheckDeliveryArea() {
     let checkDeliveryHTML = `
         <div class="delivery-overlay screen-overlay">
             <div class="delivery-modal-wrapper">
@@ -66,7 +66,7 @@ function initCheckDeliveryArea() {
             lookUpServiceArea();
         });
     }
-    initCheckDeliveryArea.initDeliveryAreaMap = initDeliveryAreaMap;
+   // initCheckDeliveryArea.initDeliveryAreaMap = initDeliveryAreaMap;
 
     const addressSave = {};
     // Look up Service Areas to see if address matches api
@@ -255,6 +255,6 @@ function initCheckDeliveryArea() {
             clearDeliveryModel();
         }
     });
-}
+//}
 
-initCheckDeliveryArea();
+//initCheckDeliveryArea();
