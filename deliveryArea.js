@@ -57,7 +57,7 @@ function initCheckDeliveryArea() {
     }
 
     function showDeliveryModal() {
-        checkDelivery.deliveryOverlay.classList.add('active');
+        deliveryOverlay.classList.add('active');
     }
     // Initialize AutoComplete on Address Field
     function initDeliveryAreaMap() {
