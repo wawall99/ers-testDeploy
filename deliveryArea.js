@@ -34,7 +34,7 @@ fetchServiceAreas()
                             <div class="delivery-text"></div>
                         </div>
                         <div class="map-container"></div>
-                        <btn onclick="saveAddress()" class="set-address-btn" class="btn button">Set As Event Address</btn>
+                        <btn onclick="saveAddress()" class="set-address-btn btn button">Set As Event Address</btn>
                     </div>
                 </div>
             </div>
