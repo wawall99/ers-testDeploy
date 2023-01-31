@@ -21,7 +21,7 @@ fetchServiceAreas()
         <div class="delivery-overlay screen-overlay">
             <div class="delivery-modal-wrapper">
                 <div class="close-btn-wrapper">
-                    <button onclick="clearDeliveryModel();" class="close-btn">x</button>
+                    <button onclick="clearDeliveryModel();" class="close-btn">×</button>
                 </div>
                 <div class="delivery-modal">
                     <div class="check-delivery" style="width:100%; margin: auto;">
