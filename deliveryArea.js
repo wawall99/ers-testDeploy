@@ -41,7 +41,7 @@ function initCheckDeliveryArea() {
         </div>
     `;
 
-    document.body.insertAdjacentHTML('beforeend', checkDeliveryHTML)
+    document.body.insertAdjacentHTML('beforeend', checkDeliveryHTML);
 
     let deliveryOverlay = document.querySelector('.delivery-overlay');
     let deliveryResponse = document.querySelector('.delivery-response');
@@ -242,7 +242,7 @@ function initCheckDeliveryArea() {
 
     let checkDeliveryBtn = document.querySelector('.check-delivery-btn');
 
-    checkDeliveryBtn.addEventListener('click', (event) => {
+    checkDeliveryBtn.addEventListener('click', function() {
         showDeliveryModal();
         initDeliveryAreaMap();
     });
