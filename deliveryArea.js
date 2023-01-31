@@ -17,18 +17,18 @@ fetchServiceAreas()
     });
 
 function addCheckAvaliabiliyBtn() {
-    if (window.location.pathname.includes('/items/')) {
-        let highlightContainer = document.body.querySelector('.highlight-list-content');
-        if (highlightContainer) {
-            highlightContainer.insertAdjacentHTML('beforeend', `
-                <div class="clearfix"></div>
-                <p style="margin-top:10px"><button onclick="showDeliveryModal()" class="btn button check-delivery-btn">Check Delivery Area</button></p>
-            `);
-        }
+    let highlightContainer = document.body.querySelector('.highlight-list-content');
+    if (highlightContainer) {
+        highlightContainer.insertAdjacentHTML('beforeend', `
+            <div class="clearfix"></div>
+            <p style="margin-top:10px"><button onclick="showDeliveryModal()" class="btn button check-delivery-btn">Check Delivery Area</button></p>
+        `);
     }
 }
+if (window.location.pathname.includes('/items/')) {
+    addCheckAvaliabiliyBtn();
+}
 
-addCheckAvaliabiliyBtn();
 
 let checkDeliveryHTML = `
     <div class="delivery-overlay screen-overlay">
@@ -253,7 +253,7 @@ function clearDeliveryModel() {
     mapContainer.innerHTML = ``;
     deliveryAddressField.value = "";
 }
-
+/*
 let checkDeliveryBtn = document.querySelector('.check-delivery-btn');
 if (checkDeliveryBtn) {
     checkDeliveryBtn.addEventListener('click', function() {
@@ -261,7 +261,7 @@ if (checkDeliveryBtn) {
         initDeliveryAreaMap();
     });
 }
-
+*/
 
 deliveryOverlay.addEventListener('click', function(event) {
     const isOutside = !event.target.closest('.delivery-modal-wrapper');
