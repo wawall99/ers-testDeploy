@@ -43,7 +43,6 @@ function initCheckDeliveryArea() {
 
     document.body.insertAdjacentHTML('beforeend', checkDeliveryHTML)
 
-
     let deliveryOverlay = document.querySelector('.delivery-overlay');
     let deliveryResponse = document.querySelector('.delivery-response');
     let deliveryText = document.querySelector('.delivery-text');
@@ -240,6 +239,14 @@ function initCheckDeliveryArea() {
         mapContainer.innerHTML = ``;
         inputField.value = "";
     }
+
+    let checkDeliveryBtn = document.querySelector('.check-delivery-btn');
+
+    checkDeliveryBtn.addEventListener('click', (event) => {
+        showDeliveryModal();
+        initDeliveryAreaMap();
+    });
+
 
     deliveryOverlay.addEventListener('click', function(event) {
         const isOutside = !event.target.closest('.delivery-modal-wrapper');
