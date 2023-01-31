@@ -91,7 +91,7 @@ fetchServiceAreas()
         let stateLong = "";
         let postal = "";
 
-        let fullAddress = deliveryAddressField;
+        let fullAddress = deliveryAddressField.value;
         
         for (let i = 0; i < addressComponents.length; i++) {
             var addressType = addressComponents[i].types[0];
