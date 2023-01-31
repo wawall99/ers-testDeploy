@@ -19,9 +19,11 @@ fetchServiceAreas()
 function initCheckDeliveryArea() {
     if (window.location.pathname.includes('/items/')) {
         let highlightContainer = document.body.querySelector('.highlight-list-content');
-        highlightContainer.insertAdjacentHTML('beforeend', `
-            <p style="margin-top:10px"><btn class="btn button check-delivery-btn">Check Delivery Area</btn></p>
-        `);
+        if (highlightContainer) {
+            highlightContainer.insertAdjacentHTML('beforeend', `
+                <p style="margin-top:10px"><btn class="btn button check-delivery-btn">Check Delivery Area</btn></p>
+            `);
+        }
     }
 
     let checkDeliveryHTML = `
