@@ -16,16 +16,21 @@ fetchServiceAreas()
         zipAreas = serviceAreas.zips.rows;
     });
 
-function initCheckDeliveryArea() {
+function addCheckAvaliabiliyBtn {
     if (window.location.pathname.includes('/items/')) {
         let highlightContainer = document.body.querySelector('.highlight-list-content');
         if (highlightContainer) {
             highlightContainer.insertAdjacentHTML('beforeend', `
+                <div class="clearfix"></div>
                 <p style="margin-top:10px"><btn class="btn button check-delivery-btn">Check Delivery Area</btn></p>
             `);
         }
     }
+}
 
+addCheckAvaliabiliyBtn();
+
+function initCheckDeliveryArea() {
     let checkDeliveryHTML = `
         <div class="delivery-overlay screen-overlay">
             <div class="delivery-modal-wrapper">
@@ -74,7 +79,8 @@ function initCheckDeliveryArea() {
             lookUpServiceArea();
         });
     }
-    initCheckDeliveryArea.initDeliveryAreaMap = initDeliveryAreaMap;
+
+    initDeliveryAreaMap();
 
     const addressSave = {};
     // Look up Service Areas to see if address matches api
@@ -266,4 +272,4 @@ function initCheckDeliveryArea() {
     });
 }
 
-initCheckDeliveryArea();
+//initCheckDeliveryArea();
