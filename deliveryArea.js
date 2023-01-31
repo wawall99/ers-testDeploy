@@ -238,7 +238,7 @@ fetchServiceAreas()
         deliveryResponse.classList.remove('active');
         deliveryText.innerHTML = ``;
         mapContainer.innerHTML = ``;
-        inputField.value = "";
+        deliveryAddressField.value = "";
     }
 
     let checkDeliveryBtn = document.querySelector('.check-delivery-btn');
