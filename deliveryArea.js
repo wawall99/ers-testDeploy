@@ -66,6 +66,7 @@ function initCheckDeliveryArea() {
             lookUpServiceArea();
         });
     }
+    initCheckDeliveryArea.initDeliveryAreaMap = initDeliveryAreaMap;
 
     const addressSave = {};
     // Look up Service Areas to see if address matches api
@@ -255,3 +256,5 @@ function initCheckDeliveryArea() {
         }
     });
 }
+
+initCheckDeliveryArea();
