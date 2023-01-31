@@ -58,8 +58,8 @@ document.body.insertAdjacentHTML('beforeend', checkDeliveryHTML);
 let deliveryOverlay = document.querySelector('.delivery-overlay');
 let deliveryResponse = document.querySelector('.delivery-response');
 let deliveryText = document.querySelector('.delivery-text');
-let mapContainer = document.querySelector('.map-container');
-let setAddressBtn = document.querySelector('.set-address-btn');
+let deliveryMapContainer = document.querySelector('.delivery-overlay .map-container');
+let deliverySetAddressBtn = document.querySelector('.delivery-overlay .set-address-btn');
 let deliveryAddressField = document.querySelector('.check-delivery-input');
 let deliveryAreaAutocomplete;
 const checkDeliveryAutocompleteOptions = {
@@ -164,7 +164,7 @@ function lookUpServiceArea() {
     
     let mapText;
     let showSetAddress = true;
-    setAddressBtn.innerText = 'Set as Event Address';
+    deliverySetAddressBtn.innerText = 'Set as Event Address';
     deliveryText.innerHTML = '';
     
     if(stateMatch && cityMatch && zipMatch) {
@@ -206,7 +206,7 @@ function lookUpServiceArea() {
         })
         
     function initMap() {
-        let map = new google.maps.Map(mapContainer, {
+        let map = new google.maps.Map(deliveryMapContainer, {
         center: addressLatLng,
         zoom: 14,
         });
@@ -229,37 +229,28 @@ function lookUpServiceArea() {
         });
         
         if (showSetAddress) {
-            setAddressBtn.classList.add('active');
+            deliverySetAddressBtn.classList.add('active');
         }
         
         deliveryResponse.classList.add('active');
-        mapContainer.classList.add('active');
+        deliveryMapContainer.classList.add('active');
     }
 }
 
 function saveAddress() {
     localStorage.setItem('addressSave', JSON.stringify(addressSave));
-    setAddressBtn.innerText = 'Address Set';
+    deliverySetAddressBtn.innerText = 'Address Set';
 }
 
 function clearDeliveryModel() {
     deliveryOverlay.classList.remove('active');
-    mapContainer.classList.remove('active');
-    setAddressBtn.classList.remove('active');
+    deliveryMapContainer.classList.remove('active');
+    deliverySetAddressBtn.classList.remove('active');
     deliveryResponse.classList.remove('active');
     deliveryText.innerHTML = ``;
-    mapContainer.innerHTML = ``;
+    deliveryMapContainer.innerHTML = ``;
     deliveryAddressField.value = "";
 }
-/*
-let checkDeliveryBtn = document.querySelector('.check-delivery-btn');
-if (checkDeliveryBtn) {
-    checkDeliveryBtn.addEventListener('click', function() {
-        showDeliveryModal();
-        initDeliveryAreaMap();
-    });
-}
-*/
 
 deliveryOverlay.addEventListener('click', function(event) {
     const isOutside = !event.target.closest('.delivery-modal-wrapper');
