@@ -21,7 +21,7 @@ function addCheckAvaliabiliyBtn() {
     if (highlightContainer) {
         highlightContainer.insertAdjacentHTML('beforeend', `
             <div class="clearfix"></div>
-            <p style="margin-top:10px"><button onclick="showDeliveryModal()" class="btn button check-delivery-btn">Check Delivery Area</button></p>
+            <p class="check-delivey-btn-wrapper" style="margin-top:10px"><button onclick="showDeliveryModal()" class="btn button check-delivery-btn">Check Delivery Area</button></p>
         `);
     }
 }
