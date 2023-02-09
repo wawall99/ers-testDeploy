@@ -15,7 +15,8 @@ fetchServiceAreas()
         stateAreas = serviceAreas.states.rows;
         zipAreas = serviceAreas.zips.rows;
     });
-function initItemAreaLookup() {
+/*
+//function initItemAreaLookup() {
     function addCheckAvaliabiliyBtn() {
         let highlightContainer = document.body.querySelector('.highlight-list-content');
         if (highlightContainer) {
@@ -238,7 +239,7 @@ function initItemAreaLookup() {
     }
 }
 
-initItemAreaLookup();
+// initItemAreaLookup();
 
 function saveAddress() {
     localStorage.setItem('addressSave', JSON.stringify(addressSave));
@@ -261,3 +262,4 @@ deliveryOverlay.addEventListener('click', function(event) {
         clearDeliveryModel();
     }
 });
+*/
