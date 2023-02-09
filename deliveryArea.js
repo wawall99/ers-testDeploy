@@ -15,8 +15,8 @@ fetchServiceAreas()
         stateAreas = serviceAreas.states.rows;
         zipAreas = serviceAreas.zips.rows;
     });
-/*
-//function initItemAreaLookup() {
+
+function initItemAreaLookup() {
     function addCheckAvaliabiliyBtn() {
         let highlightContainer = document.body.querySelector('.highlight-list-content');
         if (highlightContainer) {
@@ -60,6 +60,7 @@ fetchServiceAreas()
     let deliveryResponse = document.querySelector('.delivery-response');
     let deliveryText = document.querySelector('.delivery-text');
     let deliveryMapContainer = document.querySelector('.delivery-overlay .map-container');
+    let deliveryOverlayCloseBtn = document.querySelector('.delivery-overlay .close-btn');
     let deliverySetAddressBtn = document.querySelector('.delivery-overlay .set-address-btn');
     let deliveryAddressField = document.querySelector('.check-delivery-input');
     let deliveryAreaAutocomplete;
@@ -237,29 +238,31 @@ fetchServiceAreas()
             deliveryMapContainer.classList.add('active');
         }
     }
-}
 
-// initItemAreaLookup();
-
-function saveAddress() {
-    localStorage.setItem('addressSave', JSON.stringify(addressSave));
-    deliverySetAddressBtn.innerText = 'Address Set';
-}
-
-function clearDeliveryModel() {
-    deliveryOverlay.classList.remove('active');
-    deliveryMapContainer.classList.remove('active');
-    deliverySetAddressBtn.classList.remove('active');
-    deliveryResponse.classList.remove('active');
-    deliveryText.innerHTML = ``;
-    deliveryMapContainer.innerHTML = ``;
-    deliveryAddressField.value = "";
-}
-
-deliveryOverlay.addEventListener('click', function(event) {
-    const isOutside = !event.target.closest('.delivery-modal-wrapper');
-    if (isOutside) {
-        clearDeliveryModel();
+    function saveAddress() {
+        localStorage.setItem('addressSave', JSON.stringify(addressSave));
+        deliverySetAddressBtn.innerText = 'Address Set';
     }
-});
-*/
+
+    function clearDeliveryModel() {
+        deliveryOverlay.classList.remove('active');
+        deliveryMapContainer.classList.remove('active');
+        deliverySetAddressBtn.classList.remove('active');
+        deliveryResponse.classList.remove('active');
+        deliveryText.innerHTML = ``;
+        deliveryMapContainer.innerHTML = ``;
+        deliveryAddressField.value = "";
+    }
+    deliverySetAddressBtn.addEventListener('click', function(event) {
+        saveAddress();
+    });
+    deliveryOverlayCloseBtn.addEventListener('click', function(event) {
+        clearDeliveryModel();
+    });
+    deliveryOverlay.addEventListener('click', function(event) {
+        const isOutside = !event.target.closest('.delivery-modal-wrapper');
+        if (isOutside) {
+            clearDeliveryModel();
+        }
+    });
+}
