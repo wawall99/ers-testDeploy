@@ -22,7 +22,7 @@ function initItemAreaLookup() {
         if (highlightContainer) {
             highlightContainer.insertAdjacentHTML('beforeend', `
                 <div class="clearfix"></div>
-                <p class="check-delivey-btn-wrapper" style="margin-top:10px"><button onclick="showDeliveryModal()" class="btn button check-delivery-btn">Check Delivery Area</button></p>
+                <p class="check-delivey-btn-wrapper" style="margin-top:10px"><button class="btn button check-delivery-btn">Check Delivery Area</button></p>
             `);
         }
     }
@@ -35,7 +35,7 @@ function initItemAreaLookup() {
         <div class="delivery-overlay screen-overlay">
             <div class="delivery-modal-wrapper">
                 <div class="close-btn-wrapper">
-                    <button onclick="clearDeliveryModel();" class="close-btn">×</button>
+                    <button class="close-btn">×</button>
                 </div>
                 <div class="delivery-modal">
                     <div class="check-delivery" style="width:100%; margin: auto;">
@@ -47,7 +47,7 @@ function initItemAreaLookup() {
                             <div class="delivery-text"></div>
                         </div>
                         <div class="map-container"></div>
-                        <btn onclick="saveAddress()" class="set-address-btn btn button">Set As Event Address</btn>
+                        <button class="set-address-btn btn button">Set As Event Address</button>
                     </div>
                 </div>
             </div>
@@ -60,6 +60,7 @@ function initItemAreaLookup() {
     let deliveryResponse = document.querySelector('.delivery-response');
     let deliveryText = document.querySelector('.delivery-text');
     let deliveryMapContainer = document.querySelector('.delivery-overlay .map-container');
+    let checkDeliveryBtn = document.querySelector('.check-delivery-btn');
     let deliveryOverlayCloseBtn = document.querySelector('.delivery-overlay .close-btn');
     let deliverySetAddressBtn = document.querySelector('.delivery-overlay .set-address-btn');
     let deliveryAddressField = document.querySelector('.check-delivery-input');
@@ -73,6 +74,9 @@ function initItemAreaLookup() {
     function showDeliveryModal() {
         deliveryOverlay.classList.add('active');
     }
+    checkDeliveryBtn.addEventListener('click', function(event) {
+        showDeliveryModal();
+    })
     // Initialize AutoComplete on Address Field
     function initDeliveryAreaMap() {
         deliveryAreaAutocomplete = new google.maps.places.Autocomplete(deliveryAddressField, checkDeliveryAutocompleteOptions);
