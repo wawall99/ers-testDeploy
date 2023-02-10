@@ -80,12 +80,13 @@ function initItemAreaLookup() {
         });
     }
     // Initialize AutoComplete on Address Field
-    function initDeliveryAreaMap() {
+    function initDeliveryAreaAutocomplete() {
         deliveryAreaAutocomplete = new google.maps.places.Autocomplete(deliveryAddressField, checkDeliveryAutocompleteOptions);
         deliveryAreaAutocomplete.addListener('place_changed', function() {
             lookUpServiceArea();
         });
     }
+    initDeliveryAreaAutocomplete();
 
     const addressSave = {};
     // Look up Service Areas to see if address matches api
