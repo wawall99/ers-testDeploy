@@ -256,7 +256,7 @@ function initItemAreaLookup() {
             });
             
             if (showSetAddress) {
-                deliverySetAddressBtn.classList.add('active');
+                deliverySetAddressBtnContainer.classList.add('active');
             }
             
             deliveryResponse.classList.add('active');
@@ -273,7 +273,7 @@ function initItemAreaLookup() {
     function clearDeliveryModel() {
         deliveryOverlay.classList.remove('active');
         deliveryMapContainer.classList.remove('active');
-        deliverySetAddressBtn.classList.remove('active');
+        deliverySetAddressBtnContainer.classList.remove('active');
         deliveryAddressSet.classList.remove('active');
         deliveryResponse.classList.remove('active');
         deliveryText.innerHTML = ``;
