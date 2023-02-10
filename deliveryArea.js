@@ -49,6 +49,12 @@ function initItemAreaLookup() {
                         <div class="map-container"></div>
                         <div class="set-address-btn-container">
                             <button class="set-address-btn btn button">Set As Event Address</button>
+                            <div class="address-set-wrapper">
+                                <div class="address-set-text">Address Set</div>
+                                <div class="address-set-checkmark">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -66,6 +72,7 @@ function initItemAreaLookup() {
     let deliveryOverlayCloseBtn = document.querySelector('.delivery-overlay .close-btn');
     let deliverySetAddressBtnContainer = document.querySelector('.delivery-overlay .set-address-btn-container');
     let deliverySetAddressBtn = document.querySelector('.delivery-overlay .set-address-btn');
+    let deliveryAddressSet = document.querySelector('.delivery-overlay .address-set-wrapper');
     let deliveryAddressField = document.querySelector('.check-delivery-input');
     let deliveryAreaAutocomplete;
     const checkDeliveryAutocompleteOptions = {
@@ -241,7 +248,7 @@ function initItemAreaLookup() {
             });
             
             if (showSetAddress) {
-                deliverySetAddressBtnContainer.classList.add('active');
+                deliverySetAddressBtn.classList.add('active');
             }
             
             deliveryResponse.classList.add('active');
@@ -251,22 +258,16 @@ function initItemAreaLookup() {
 
     function saveAddress() {
         localStorage.setItem('addressSave', JSON.stringify(addressSave));
-        let addressSetHTML = `
-            <div class="address-set-wrapper">
-                <div class="address-set-text">Address Set</div>
-                <div class="address-set-checkmark">
-                    <i class="fas fa-check"></i>
-                </div>
-            </div>
-        `;
-        deliverySetAddressBtnContainer.innerHTML = addressSetHTML;
+        deliverySetAddressBtn.classList.remove('active');
+        deliveryAddressSet.classList.add('active');
+        
     }
 
     function clearDeliveryModel() {
         deliveryOverlay.classList.remove('active');
         deliveryMapContainer.classList.remove('active');
-        deliverySetAddressBtnContainer.classList.remove('active');
-        deliverySetAddressBtnContainer.replaceChildren(deliverySetAddressBtn);
+        deliverySetAddressBtn.classList.remove('active');
+        deliveryAddressSet.classList.remove('active');
         deliveryResponse.classList.remove('active');
         deliveryText.innerHTML = ``;
         deliveryMapContainer.innerHTML = ``;
@@ -280,12 +281,10 @@ function initItemAreaLookup() {
     });
     
     deliveryOverlay.addEventListener('click', function(event) {
-        setTimeout(function() {
-            const isOutside = !event.target.closest('.delivery-modal-wrapper');
-            if (isOutside) {
-                clearDeliveryModel();
-            }
-        }, 1000);
+        const isOutside = !event.target.closest('.delivery-modal-wrapper');
+        if (isOutside) {
+            clearDeliveryModel();
+        }
     });
     
 }
