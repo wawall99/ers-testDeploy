@@ -57,12 +57,6 @@ function initItemAreaLookup() {
                         <div class="map-container"></div>
                         <div class="set-address-btn-container">
                             <button class="set-address-btn button-style">Set As Address</button>
-                            <div class="address-set-wrapper">
-                                <div class="address-set-text">Address Set</div>
-                                <div class="address-set-checkmark">
-                                    <i class="fas fa-check"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
