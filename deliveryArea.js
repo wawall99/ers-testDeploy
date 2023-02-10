@@ -2,7 +2,7 @@ let stateAreas;
 let cityAreas;
 let zipAreas;
 
-let serviceAreaURL = 'https://inflateaparty.ourers.com/publicapi/read/states,cities,zips/';
+let serviceAreaURL = 'https://dumpster-2022.ourers.com/publicapi/read/states,cities,zips/';
 async function fetchServiceAreas() {
     const response = await fetch(serviceAreaURL);
     const serviceAreas = await response.json();
