@@ -30,7 +30,7 @@ function initItemAreaLookup() {
         if (highlightContainer) {
             highlightContainer.insertAdjacentHTML('beforeend', `
                 <div class="clearfix"></div>
-                <p class="check-delivey-btn-wrapper" style="margin-top:10px"><button class="btn button check-delivery-btn">Check Delivery Area</button></p>
+                <p class="check-delivey-btn-wrapper" style="margin-top:10px"><button class="button-style check-delivery-btn">Check Delivery Area</button></p>
             `);
         }
     }
@@ -56,7 +56,7 @@ function initItemAreaLookup() {
                         </div>
                         <div class="map-container"></div>
                         <div class="set-address-btn-container">
-                            <button class="set-address-btn button">Set As Address</button>
+                            <button class="set-address-btn button-style">Set As Address</button>
                             <div class="address-set-wrapper">
                                 <div class="address-set-text">Address Set</div>
                                 <div class="address-set-checkmark">
