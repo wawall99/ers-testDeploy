@@ -47,7 +47,9 @@ function initItemAreaLookup() {
                             <div class="delivery-text"></div>
                         </div>
                         <div class="map-container"></div>
-                        <button class="set-address-btn btn button">Set As Event Address</button>
+                        <div class="set-address-btn-container">
+                            <button class="set-address-btn btn button">Set As Event Address</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -62,6 +64,7 @@ function initItemAreaLookup() {
     let deliveryMapContainer = document.querySelector('.delivery-overlay .map-container');
     let checkDeliveryBtn = document.querySelector('.check-delivery-btn');
     let deliveryOverlayCloseBtn = document.querySelector('.delivery-overlay .close-btn');
+    let deliverySetAddressBtnContainer = document.querySelector('.delivery-overlay .set-address-btn-container');
     let deliverySetAddressBtn = document.querySelector('.delivery-overlay .set-address-btn');
     let deliveryAddressField = document.querySelector('.check-delivery-input');
     let deliveryAreaAutocomplete;
@@ -248,7 +251,12 @@ function initItemAreaLookup() {
 
     function saveAddress() {
         localStorage.setItem('addressSave', JSON.stringify(addressSave));
-        deliverySetAddressBtn.innerText = 'Address Set';
+        deliverySetAddressBtnContainer.replaceChildren(`
+            <div class="address-set-wrapper">
+                <div class="address-set-text">Address Set</div>
+                <div class="address-set-checkmark"></div>
+            </div>
+        `)
     }
 
     function clearDeliveryModel() {
