@@ -9,12 +9,11 @@ async function fetchServiceAreas() {
     return serviceAreas;
 }
 
-fetchServiceAreas()
-    .then(serviceAreas => {
-        cityAreas = serviceAreas.cities.rows;
-        stateAreas = serviceAreas.states.rows;
-        zipAreas = serviceAreas.zips.rows;
-    });
+fetchServiceAreas().then(serviceAreas => {
+    cityAreas = serviceAreas.cities.rows;
+    stateAreas = serviceAreas.states.rows;
+    zipAreas = serviceAreas.zips.rows;
+});
 
 function initItemAreaLookup() {
     function addCheckAvaliabiliyBtn() {
