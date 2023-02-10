@@ -251,7 +251,7 @@ function initItemAreaLookup() {
 
     function saveAddress() {
         localStorage.setItem('addressSave', JSON.stringify(addressSave));
-        deliverySetAddressBtnContainer.innerHTML = `
+        let addressSetHTML = `
             <div class="address-set-wrapper">
                 <div class="address-set-text">Address Set</div>
                 <div class="address-set-checkmark">
@@ -259,6 +259,7 @@ function initItemAreaLookup() {
                 </div>
             </div>
         `;
+        deliverySetAddressBtnContainer.replaceChildren(addressSetHTML);
     }
 
     function clearDeliveryModel() {
