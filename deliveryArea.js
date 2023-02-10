@@ -4,16 +4,23 @@ let zipAreas;
 
 let serviceAreaURL = 'https://wwall.ourers.com/publicapi/read/states,cities,zips/';
 async function fetchServiceAreas() {
+    if (response.status !== 200) {
+        throw new Error("cannot fetch data");
+    }
     const response = await fetch(serviceAreaURL);
     const serviceAreas = await response.json();
     return serviceAreas;
 }
 
-fetchServiceAreas().then(serviceAreas => {
-    cityAreas = serviceAreas.cities.rows;
-    stateAreas = serviceAreas.states.rows;
-    zipAreas = serviceAreas.zips.rows;
-});
+fetchServiceAreas()
+    .then(serviceAreas => {
+        cityAreas = serviceAreas.cities.rows;
+        stateAreas = serviceAreas.states.rows;
+        zipAreas = serviceAreas.zips.rows;
+    })
+    .catch((err) => {
+        console.log("rejected", err.message);
+    });
 
 function initItemAreaLookup() {
     function addCheckAvaliabiliyBtn() {
