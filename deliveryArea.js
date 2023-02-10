@@ -278,10 +278,12 @@ function initItemAreaLookup() {
     deliveryOverlayCloseBtn.addEventListener('click', function(event) {
         clearDeliveryModel();
     });
+    /*
     deliveryOverlay.addEventListener('click', function(event) {
         const isOutside = !event.target.closest('.delivery-modal-wrapper');
         if (isOutside) {
             clearDeliveryModel();
         }
     });
+    */
 }
