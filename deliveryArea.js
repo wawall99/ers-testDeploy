@@ -74,9 +74,11 @@ function initItemAreaLookup() {
     function showDeliveryModal() {
         deliveryOverlay.classList.add('active');
     }
-    checkDeliveryBtn.addEventListener('click', function(event) {
-        showDeliveryModal();
-    });
+    if(checkDeliveryBtn) {
+        checkDeliveryBtn.addEventListener('click', function(event) {
+            showDeliveryModal();
+        });
+    }
     // Initialize AutoComplete on Address Field
     function initDeliveryAreaMap() {
         deliveryAreaAutocomplete = new google.maps.places.Autocomplete(deliveryAddressField, checkDeliveryAutocompleteOptions);
