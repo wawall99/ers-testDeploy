@@ -4,10 +4,10 @@ let zipAreas;
 
 let serviceAreaURL = 'https://wwall.ourers.com/publicapi/read/states,cities,zips/';
 async function fetchServiceAreas() {
+    const response = await fetch(serviceAreaURL);
     if (response.status !== 200) {
         throw new Error("cannot fetch data");
     }
-    const response = await fetch(serviceAreaURL);
     const serviceAreas = await response.json();
     return serviceAreas;
 }
