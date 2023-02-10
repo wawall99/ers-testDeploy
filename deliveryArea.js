@@ -191,7 +191,7 @@ function initItemAreaLookup() {
         
         let mapText;
         let showSetAddress = true;
-        deliverySetAddressBtn.innerText = 'Set as Event Address';
+        deliverySetAddressBtn.innerText = 'Set as Address';
         deliveryText.innerHTML = '';
         
         if(stateMatch && cityMatch && zipMatch) {
