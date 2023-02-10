@@ -278,12 +278,14 @@ function initItemAreaLookup() {
     deliveryOverlayCloseBtn.addEventListener('click', function(event) {
         clearDeliveryModel();
     });
-    /*
+    
     deliveryOverlay.addEventListener('click', function(event) {
-        const isOutside = !event.target.closest('.delivery-modal-wrapper');
-        if (isOutside) {
-            clearDeliveryModel();
-        }
+        setTimeout(function() {
+            const isOutside = !event.target.closest('.delivery-modal-wrapper');
+            if (isOutside) {
+                clearDeliveryModel();
+            }
+        }, 1000);
     });
-    */
+    
 }
