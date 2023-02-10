@@ -265,6 +265,7 @@ function initItemAreaLookup() {
         deliveryOverlay.classList.remove('active');
         deliveryMapContainer.classList.remove('active');
         deliverySetAddressBtnContainer.classList.remove('active');
+        deliverySetAddressBtnContainer.replaceChildren(deliverySetAddressBtn);
         deliveryResponse.classList.remove('active');
         deliveryText.innerHTML = ``;
         deliveryMapContainer.innerHTML = ``;
