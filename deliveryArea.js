@@ -254,7 +254,9 @@ function initItemAreaLookup() {
         deliverySetAddressBtnContainer.replaceChildren(`
             <div class="address-set-wrapper">
                 <div class="address-set-text">Address Set</div>
-                <div class="address-set-checkmark"></div>
+                <div class="address-set-checkmark">
+                    <i class="fas fa-check"></i>
+                </div>
             </div>
         `)
     }
