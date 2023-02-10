@@ -259,7 +259,7 @@ function initItemAreaLookup() {
                 </div>
             </div>
         `;
-        deliverySetAddressBtnContainer.replaceChildren(addressSetHTML);
+        deliverySetAddressBtnContainer.innerHTML = addressSetHTML;
     }
 
     function clearDeliveryModel() {
