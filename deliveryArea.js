@@ -74,7 +74,6 @@ function initItemAreaLookup() {
     let deliveryOverlayCloseBtn = document.querySelector('.delivery-overlay .close-btn');
     let deliverySetAddressBtnContainer = document.querySelector('.delivery-overlay .set-address-btn-container');
     let deliverySetAddressBtn = document.querySelector('.delivery-overlay .set-address-btn');
-    let deliveryAddressSet = document.querySelector('.delivery-overlay .address-set-wrapper');
     let deliveryAddressField = document.querySelector('.check-delivery-input');
     let deliveryAreaAutocomplete;
     const checkDeliveryAutocompleteOptions = {
@@ -270,7 +269,6 @@ function initItemAreaLookup() {
         deliveryMapContainer.classList.remove('active');
         deliverySetAddressBtnContainer.classList.remove('active');
         deliverySetAddressBtn.classList.remove('active');
-        deliveryAddressSet.classList.remove('active');
         deliveryResponse.classList.remove('active');
         deliveryText.innerHTML = ``;
         deliveryMapContainer.innerHTML = ``;
